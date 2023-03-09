@@ -34,8 +34,8 @@ const expected5 = "";
 /* 
 create function that accepts array and separator as arguments
 create temp variable empty string
-iff arr.length == 0 return new string
-loop over teh array
+if arr.length == 0 return new string
+loop over the array
     push one item in string
     check if separator is needed
         add the separator
