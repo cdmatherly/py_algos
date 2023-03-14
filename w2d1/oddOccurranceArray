@@ -1,0 +1,56 @@
+/* 
+Given a non-empty array of odd length containing ints where every int but one
+has a matching pair (another int that is the same)
+return the only int that has no matching pair.
+*/
+
+const nums1 = [1];
+const expected1 = 1;
+
+const nums2 = [5, 4, 5];
+const expected2 = 4;
+
+//             V
+const nums3 = [5, 4, 3, 4, 3, 4, 5];
+const expected3 = 4; // there is a pair of 4s but one 4 has no pair.
+
+const nums4 = [5, 2, 6, 2, 3, 1, 6, 3, 2, 5, 2];
+const expected4 = 1;
+
+// 1. Driver 🚗
+// 2. Presenter 👩‍💻
+// 3. Navigator 🧭
+
+// pseudocode here
+
+// create the function and decide what params it needs and what it will return
+
+// 1. Create a function that accepts an array.
+// 2. Create an empty object.
+// 3.Loop over given array.
+//         4.Within the loop we can check if given value within array is a key in the object.
+//          5.If it is not a key make a key with value of 1.
+//          6.If is a key increment the value by 1.
+// 7. If any key has an odd value return that key.
+
+function oddOccurrance(arr){
+    var map = {};
+    for (var i = 0; i < arr.length; i++){
+        if (map.hasOwnProperty(arr[i])){
+            map[arr[i]]++
+        }
+        else {
+            map[arr[i]] = 1
+        }
+    }
+    for (var key in map){
+        if (map[key] % 2 != 0){
+            return key
+        }
+    }
+}
+
+console.log(oddOccurrance(nums1))
+console.log(oddOccurrance(nums2))
+console.log(oddOccurrance(nums3))
+console.log(oddOccurrance(nums4))
